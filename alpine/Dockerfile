@@ -15,9 +15,7 @@ RUN ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var && \
     make && make install
 WORKDIR /
 
-EXPOSE 80
-EXPOSE 443
-EXPOSE 9090
+EXPOSE 80 443 9090
 
 CMD ["/usr/sbin/cherokee-worker"]
 
