@@ -12,3 +12,38 @@ Confirm operation by browsing to http://localhost.
 To serve a local site, map the directory as a volume to `/var/www`:
 
 `docker run -d -p 80:80 -v /tmp/www:/var/www managedkaos/cherokee`
+
+To run the Cherokee Admin UI, start the containter as above and then get the containter ID:
+
+```
+$ docker ps
+CONTAINER ID  IMAGE         COMMAND                 ... 
+732142a038a8  8629a60b094e  "/usr/sbin/cheroke..."  ...
+```
+
+Then open a shell on the running container:
+
+```
+$ docker exec -it 8629a60b094e /bin/sh
+```
+
+Inside the shell, run `cherokee-admin -b` and make a note of the admin password:
+
+```
+# cherokee-admin -b &
+# Cherokee Web Server 1.2.104 (Feb  2 2017): Listening on port ALL:9090, TLS
+disabled, IPv6 enabled, using epoll, 1048576 fds system limit, max. 524281
+connections, caching I/O, 4 threads, 131070 connections per thread, standard
+scheduling policy
+
+Login:
+  User:              admin
+  One-time Password: S7URekVf5sUKiMri
+
+Web Interface:
+  URL:               http://localhost:9090/
+
+```
+
+Open a browser window with `localhost:9090`.  When prompted, enter `admin` for the username and the password provided by the cherokee-admin command.
+
