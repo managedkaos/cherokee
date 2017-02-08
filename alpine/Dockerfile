@@ -27,5 +27,5 @@ RUN apk add --no-cache \
 
 EXPOSE 80 443 9090
 
-CMD ["/usr/sbin/cherokee-worker"]
+CMD ["/usr/sbin/cherokee"]
 
