@@ -17,14 +17,14 @@ To run the Cherokee Admin UI, start the containter as above and then get the con
 
 ```
 $ docker ps
-CONTAINER ID  IMAGE         COMMAND                 ... 
-732142a038a8  8629a60b094e  "/usr/sbin/cheroke..."  ...
+ONTAINER ID        IMAGE                  COMMAND                  
+7998bc0a1199       managedkaos/cherokee   "/usr/sbin/cheroke..."
 ```
 
 Then open a shell on the running container:
 
 ```
-$ docker exec -it 8629a60b094e /bin/sh
+$ docker exec -it 732142a038a8 /bin/sh
 ```
 
 Inside the shell, run `cherokee-admin -b` and make a note of the admin password:
