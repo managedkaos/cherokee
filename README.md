@@ -11,7 +11,7 @@ Confirm operation by browsing to http://localhost.
 
 To serve a local site, map the directory as a volume to `/var/www`:
 
-`docker run -d -p 80:80 -v /tmp/www:/var/www managedkaos/cherokee`
+`docker run -d -p 80:80 -p 9090:9090 -v /tmp/www:/var/www managedkaos/cherokee`
 
 To run the Cherokee Admin UI, start the containter as above and then get the containter ID:
 
