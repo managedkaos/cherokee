@@ -9,10 +9,12 @@ RUN apk add --no-cache \
         gettext \
         git \
         libtool \
+        linux-headers \
+        openssl-dev \
         python2 \
         rrdtool && \
     cd /tmp && \
-    git clone http://github.com/cherokee/webserver.git . && \ 
+    git clone https://github.com/cherokee/webserver.git . && \ 
     ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var && \
     make && \
     make install && \
@@ -25,7 +27,7 @@ RUN apk add --no-cache \
         libtool && \
     rm -rvf /tmp/*
 
-EXPOSE 80 9090
+EXPOSE 80 443 9090
 
 CMD ["/usr/sbin/cherokee"]
 
