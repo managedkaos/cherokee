@@ -2,6 +2,8 @@ FROM alpine
 
 MAINTAINER Managed Kaos (info@managedkaos)
 
+WORKDIR /tmp
+
 RUN apk add --no-cache \
         alpine-sdk \
         autoconf \
@@ -9,11 +11,20 @@ RUN apk add --no-cache \
         gettext \
         git \
         libtool \
-        linux-headers \
+        openssl \
         openssl-dev \
+        linux-headers \
         python2 \
         rrdtool && \
-    cd /tmp && \
+        openssl req \
+            -new \
+            -newkey rsa:4096 \
+            -days 365 \
+            -nodes \
+            -x509 \
+            -subj "/C=US/ST=CA/L=Manhattan\ Beach/O=Managed\ Kaos/OU=Cherokee\ SSL/CN=localhost" \
+            -keyout /etc/ssl/key.pem \
+            -out /etc/ssl/crt.pem && \
     git clone https://github.com/cherokee/webserver.git . && \ 
     ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var && \
     make && \
@@ -24,10 +35,12 @@ RUN apk add --no-cache \
         automake \
         gettext \
         git \
-        libtool && \
+        libtool \
+        openssl && \
     rm -rvf /tmp/*
+
+COPY cherokee.conf /etc/cherokee
 
 EXPOSE 80 443 9090
 
 CMD ["/usr/sbin/cherokee"]
-
