@@ -4,14 +4,16 @@
 `docker pull managedkaos/cherokee`
 
 After the pull, run the image:
-
-`docker run -d -p 80:80 managedkaos/cherokee`
+ 
+`docker run -d -p 80:80 -p 443:443 managedkaos/cherokee`
 
 Confirm operation by browsing to http://localhost.
 
+SSL support is built in!  The container creates a self signed certificate at build time.  Access the HTTPS version of the site by browsing to https://localhost
+
 To serve a local site, map the directory as a volume to `/var/www`:
 
-`docker run -d -p 80:80 -p 9090:9090 -v /tmp/www:/var/www managedkaos/cherokee`
+`docker run -d -p 80:80 -p 443:443 -p 9090:9090 -v /tmp/www:/var/www managedkaos/cherokee`
 
 To run the Cherokee Admin UI, start the containter as above and then get the containter ID:
 
