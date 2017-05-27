@@ -1,5 +1,6 @@
 ![logo](http://idroot.net/wp-content/uploads/2015/02/cherokee-logo.png)
 # A container for the Cherokee web server
+To get started, pull the image:
 
 `docker pull managedkaos/cherokee`
 
@@ -11,7 +12,7 @@ Confirm operation by browsing to http://localhost.
 
 SSL support is built in!  The container creates a self signed certificate at build time.  Access the HTTPS version of the site by browsing to https://localhost
 
-To serve a local site, map the directory as a volume to `/var/www`:
+To serve a local site, map a directory as a volume to `/var/www`:
 
 `docker run -d -p 80:80 -p 443:443 -p 9090:9090 -v /tmp/www:/var/www managedkaos/cherokee`
 
