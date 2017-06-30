@@ -20,7 +20,7 @@ To run the Cherokee Admin UI, start the containter as above and then get the con
 
 ```
 $ docker ps
-ONTAINER ID        IMAGE                  COMMAND                  
+CONTAINER ID        IMAGE                  COMMAND                  
 7998bc0a1199       managedkaos/cherokee   "/usr/sbin/cheroke..."
 ```
 
