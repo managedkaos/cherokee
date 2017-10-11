@@ -1,4 +1,4 @@
-![logo](http://idroot.net/wp-content/uploads/2015/02/cherokee-logo.png)
+![logo](https://raw.githubusercontent.com/managedkaos/cherokee/master/cherokee-logo.png)
 # A container for the Cherokee web server
 To get started, pull the image:
 
