@@ -6,7 +6,7 @@ To get started, pull the image:
 
 After the pull, run the image:
  
-`docker run -d -p 80:80 -p 443:443 managedkaos/cherokee`
+`docker run -d -p 80:80 -p 443:443 -p 9090:9090 managedkaos/cherokee`
 
 Confirm operation by browsing to http://localhost.
 
