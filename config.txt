@@ -8,11 +8,6 @@ export centos_80=5080
 export centos_443=5443
 export centos_9090=59090
 
-# Fedora port mappings
-export fedora_80=6080
-export fedora_443=6443
-export fedora_9090=69090
-
 # Ubuntu port mappings
 export ubuntu_80=7080
 export ubuntu_443=7443
