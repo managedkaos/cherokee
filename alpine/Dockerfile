@@ -1,6 +1,5 @@
 FROM alpine
-
-MAINTAINER Managed Kaos (info@managedkaos)
+LABEL maintainer="Managed Kaos info@managedkaos"
 
 WORKDIR /tmp
 
@@ -25,10 +24,12 @@ RUN apk add --no-cache \
             -subj "/C=US/ST=CA/L=Manhattan\ Beach/O=Managed\ Kaos/OU=Cherokee\ SSL/CN=localhost" \
             -keyout /etc/ssl/key.pem \
             -out /etc/ssl/crt.pem && \
-    git clone https://github.com/cherokee/webserver.git . && \ 
+    git clone https://github.com/cherokee/webserver.git . && \
     ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var && \
     make && \
     make install && \
+    echo "<p style='text-align:center'>Built from $(git rev-parse --short HEAD) on $(date)</p>" > /version.txt && \
+    cat /version.txt >> /var/www/index.html && \
     apk del \
         alpine-sdk \
         autoconf \
