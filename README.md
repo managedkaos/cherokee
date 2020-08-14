@@ -1,4 +1,4 @@
-![logo](https://raw.githubusercontent.com/managedkaos/cherokee/master/cherokee-logo.png)
+![logo](https://raw.githubusercontent.com/managedkaos/cherokee/master/img/cherokee-logo.png)
 # A container for the Cherokee web server
 To get started, pull the image:
 
