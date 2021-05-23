@@ -23,18 +23,17 @@ To run the Cherokee Admin UI, start the containter as above. Then run the follow
 Use the output from the command to get the user name and the one time password.  It should be similar to the following:
 
 ```
-Cherokee Web Server 1.2.104 (Sep 13 2018): Listening on port ALL:9090, TLS
+Cherokee Web Server 1.2.104 (Apr 18 2021): Listening on port ALL:9090, TLS
 disabled, IPv6 enabled, using epoll, 1048576 fds system limit, max. 524281
 connections, caching I/O, 4 threads, 131070 connections per thread, standard
 scheduling policy
 
 Login:
   User:              admin
-  One-time Password: 5FZzjxHNgvbvCaJk
+  One-time Password: 2C30FKcz2m6npV0z
 
 Web Interface:
   URL:               http://localhost:9090/
-
 ```
 
 Open a browser window with `localhost:9090`.  When prompted, enter `admin` for the username and the password provided by the cherokee-admin command.
