@@ -1,4 +1,4 @@
-FROM alpine:3.13.1
+FROM alpine:3.15.0
 LABEL maintainer="Managed Kaos info@managedkaos"
 
 WORKDIR /tmp
@@ -25,7 +25,9 @@ RUN apk add --no-cache \
             -keyout /etc/ssl/key.pem \
             -out /etc/ssl/crt.pem && \
     git clone https://github.com/cherokee/webserver.git . && \
+    /usr/bin/libtoolize && \
     ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var && \
+    autoreconf -iv \
     make && \
     make install && \
     echo "<p style='text-align:center'>Built from $(git rev-parse --short HEAD) on $(date)</p>" > /version.txt && \
