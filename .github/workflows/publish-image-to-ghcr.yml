@@ -23,12 +23,11 @@ env:
 
 
 jobs:
-  strategy:
-    matrix:
-      context: [alpine]
   build:
-
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        context: ["alpine"]
     permissions:
       contents: read
       packages: write
