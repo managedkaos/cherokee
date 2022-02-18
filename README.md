@@ -19,7 +19,13 @@ SSL support is built in!  The container creates a self signed certificate at bui
 To serve a local site, map a directory as a volume to `/var/www`:
 
 ```
-docker run --rm --name cherokee -d -p 80:80 -p 443:443 -p 9090:9090 -v /tmp/www:/var/www managedkaos/cherokee
+docker run --rm -detach \
+    --publish 80:80 \
+    --publish 443:443 \
+    --publish 9090:9090 \
+    --volume /tmp/www:/var/www \
+    --name cherokee \
+    managedkaos/cherokee
 ```
 
 To run the Cherokee Admin UI, start the containter as above. Then run the following command:
