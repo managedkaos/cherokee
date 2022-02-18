@@ -2,11 +2,15 @@
 # A container for the Cherokee web server
 To get started, pull the image:
 
-`docker pull managedkaos/cherokee`
+```
+docker pull managedkaos/cherokee
+```
 
 After the pull, run the image:
 
-`docker run --rm --name cherokee -d -p 80:80 -p 443:443 -p 9090:9090 managedkaos/cherokee`
+```
+docker run --rm --name cherokee -d -p 80:80 -p 443:443 -p 9090:9090 managedkaos/cherokee
+```
 
 Confirm operation by browsing to http://localhost.
 
@@ -14,11 +18,15 @@ SSL support is built in!  The container creates a self signed certificate at bui
 
 To serve a local site, map a directory as a volume to `/var/www`:
 
-`docker run --rm --name cherokee -d -p 80:80 -p 443:443 -p 9090:9090 -v /tmp/www:/var/www managedkaos/cherokee`
+```
+docker run --rm --name cherokee -d -p 80:80 -p 443:443 -p 9090:9090 -v /tmp/www:/var/www managedkaos/cherokee
+```
 
 To run the Cherokee Admin UI, start the containter as above. Then run the following command:
 
-`docker exec -it cherokee cherokee-admin -b`
+```
+docker exec -it cherokee cherokee-admin -b
+```
 
 Use the output from the command to get the user name and the one time password.  It should be similar to the following:
 
