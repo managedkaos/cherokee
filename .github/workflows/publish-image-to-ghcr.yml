@@ -26,9 +26,12 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
-        context: ["alpine"]
+        context: ["alpine","ubuntu"]
+      fail-fast: false
+
     permissions:
       contents: read
       packages: write
@@ -81,6 +84,9 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Disply metadata
+        run: echo "LABELS: " ${{ steps.meta.outputs.labels }}
 
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
