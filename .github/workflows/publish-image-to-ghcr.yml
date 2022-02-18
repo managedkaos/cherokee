@@ -86,7 +86,11 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Disply metadata
-        run: echo "LABELS: " ${{ steps.meta.outputs.labels }}
+        run: |
+          echo "######### TAGS"
+          echo ${{ steps.meta.outputs.tags }}
+          echo "######### LABELS"
+          echo ${{ steps.meta.outputs.labels }}
 
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
