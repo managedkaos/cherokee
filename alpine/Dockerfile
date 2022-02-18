@@ -27,9 +27,8 @@ RUN apk add --no-cache \
     git clone https://github.com/cherokee/webserver.git . && \
     /usr/bin/libtoolize && \
     ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var && \
-    autoreconf -iv \
-    make && \
-    make install && \
+    autoreconf -iv && \
+RUN make && make install && \
     echo "<p style='text-align:center'>Built from $(git rev-parse --short HEAD) on $(date)</p>" > /version.txt && \
     cat /version.txt >> /var/www/index.html && \
     apk del \
