@@ -76,7 +76,13 @@ jobs:
 
       - name: Disply metadata
         run: |
-          echo ${{steps.meta.outputs.bake-file }}
+          cat ${{steps.meta.outputs.bake-file }}
+
+      - name: Archive metadata
+        uses: actions/upload-artifact@v2
+        with:
+          name: metadata-${{ matrix.context }}.json
+          path: ${{steps.meta.outputs.bake-file }}
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
