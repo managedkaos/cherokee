@@ -8,7 +8,7 @@ This project is inspired by the [Cherokee Project](https://github.com/cherokee),
 
 This is an independent project that is not endorsed or governed by the Cherokee Project.  
 
-All code from the Chrerokee Project is compiled here under the [GNU General Public License, Version 2](https://github.com/cherokee/webserver/blob/master/COPYING).
+All code from the Cherokee Project is used under the [GNU General Public License, Version 2](https://github.com/cherokee/webserver/blob/master/COPYING).
 
 This project, which packages the code from the Cherokee Webserver project into a containter, is licensed under the [MIT License](https://github.com/managedkaos/cherokee/blob/main/LICENSE).
 
