@@ -1,3 +1,7 @@
+# 2021-02-26
+- Fix build errors in alpine image
+- Add workflow status badges to README file
+
 # 2020-08-13
 - Rebuilding the image to incorporate [PR #1243](https://github.com/cherokee/webserver/pull/1243)
 - Remove `centos` and `fedora` from the build script, preserving their `Dockerfile`s for reference

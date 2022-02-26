@@ -1,12 +1,12 @@
 IMAGE       = cherokee
 REPO        = managedkaos
 COMMIT_HASH = $(shell git rev-parse --short HEAD)
-TAGS        = alpine latest $(COMMIT_HASH)
+TAGS        = alpine-$(COMMIT_HASH)
 
 all: build tag push
 
 build:
-	docker build --tag "$(IMAGE)" .
+	docker build --progress=plain --tag "$(IMAGE)" .
 tag:
 	$(foreach tag, $(TAGS), docker image tag "$(IMAGE)" "$(REPO)/$(IMAGE):$(tag)";)
 

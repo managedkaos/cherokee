@@ -1,4 +1,8 @@
 ![logo](https://raw.githubusercontent.com/managedkaos/cherokee/master/img/cherokee-logo.png)
+
+# Status
+![Build and Publish to GHCR](https://github.com/managedkaos/cherokee/actions/workflows/publish-image-to-ghcr.yml/badge.svg)
+
 # A container for the Cherokee web server
 To get started, pull the image:
 
