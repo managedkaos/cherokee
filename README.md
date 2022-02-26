@@ -4,13 +4,17 @@
 ![Build and Publish to GHCR](https://github.com/managedkaos/cherokee/actions/workflows/publish-image-to-ghcr.yml/badge.svg)
 
 # Notice and Licensing
-This project is inspired by the [Cherokee Project](https://github.com/cherokee), specifically the [Cherokee Webserver](https://github.com/cherokee/webserver).
+The Managed Kaos Cherokee Project (hereafter referred to as "This project") is inspired by the [Cherokee Project](https://github.com/cherokee), specifically the [Cherokee Webserver](https://github.com/cherokee/webserver).
 
-This is an independent project that is not endorsed or governed by the Cherokee Project.  
+This project is not endorsed or governed by the Cherokee Project.  
 
-All code from the Cherokee Project is used under the [GNU General Public License, Version 2](https://github.com/cherokee/webserver/blob/master/COPYING).
+This project uses code from the Cherokee Project under the [GNU General Public License, Version 2](https://github.com/cherokee/webserver/blob/master/COPYING).
 
-This project, which packages the code from the Cherokee Webserver project into a containter, is licensed under the [MIT License](https://github.com/managedkaos/cherokee/blob/main/LICENSE).
+This project is licensed under the [MIT License](https://github.com/managedkaos/cherokee/blob/main/LICENSE).
+
+This project packages the code from the Cherokee Webserver into a containter format. 
+
+This project does not modify the Cherokee Webserver code.
 
 Enjoy! :D
 
