@@ -29,7 +29,7 @@ jobs:
 
     strategy:
       matrix:
-        context: ["alpine","ubuntu"]
+        context: ["alpine"]
       fail-fast: false
 
     permissions:
