@@ -20,9 +20,6 @@ on:
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
-  # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
-
 
 jobs:
   build:
@@ -71,13 +68,14 @@ jobs:
 
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
+      # ${{ github.repository }} resolves to <account>/<repo>
       - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v5.3.0
         with:
           images: |
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-            ${{ github.actor }}/${{ env.IMAGE_NAME }}
+            ${{ env.REGISTRY }}/${{ github.repository }}
+            ${{ github.repository }}
 
       - name: Disply metadata
         run: |
