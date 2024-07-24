@@ -1,7 +1,7 @@
 IMAGE       = cherokee
 REPO        = managedkaos
 COMMIT_HASH = $(shell git rev-parse --short HEAD)
-TAGS        = alpine-$(COMMIT_HASH)
+TAGS        = latest alpine-$(COMMIT_HASH)
 
 all: build tag push
 
