@@ -14,7 +14,7 @@ tag:
 run:
 	docker run --rm -it --name cherokee "local-$(IMAGE)"
 
-deamon:
+daemon:
 	docker run --rm -d --name cherokee "local-$(IMAGE)"
 
 exec:
