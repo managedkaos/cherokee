@@ -12,7 +12,7 @@ This project uses code from the Cherokee Project under the [GNU General Public L
 
 This project is licensed under the [MIT License](https://github.com/managedkaos/cherokee/blob/main/LICENSE).
 
-This project packages the code from the Cherokee Webserver into a containter format.
+This project packages the code from the Cherokee Webserver into a container format.
 
 This project does not modify the Cherokee Webserver code.
 
@@ -61,7 +61,7 @@ docker run --rm -detach \
     ghcr.io/managedkaos/cherokee:main
 ```
 
-To run the Cherokee Admin UI, start the containter as above. Then run the following command:
+To run the Cherokee Admin UI, start the container as above. Then run the following command:
 
 ```
 docker exec -it cherokee cherokee-admin -b
