@@ -15,7 +15,7 @@ RUN apk add --no-cache \
         linux-headers \
         python2 \
         rrdtool && \
-    openssl req \
+        openssl req \
             -new \
             -newkey rsa:4096 \
             -days 365 \
