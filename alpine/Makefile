@@ -6,7 +6,7 @@ TAGS        = latest alpine-$(COMMIT_HASH)
 all: build tag push
 
 build:
-	docker build --progress=plain --tag "local-$(IMAGE)" .
+	docker build --no-cache --progress=plain --tag "local-$(IMAGE)" .
 
 tag:
 	$(foreach tag, $(TAGS), docker image tag "$(IMAGE)" "$(REPO)/$(IMAGE):$(tag)";)
