@@ -3,7 +3,7 @@ IMAGE       = cherokee
 COMMIT_HASH = $(shell git rev-parse --short HEAD)
 TAGS        = latest alpine-$(COMMIT_HASH)
 
-all: build tag push
+all: build tag
 
 build:
 	docker build --no-cache --progress=plain --tag "local-$(IMAGE)" .
@@ -26,8 +26,5 @@ clean:
 
 nuke: clean
 	docker rmi "local-$(IMAGE)" || true
-
-push:
-	docker push --all-tags "$(REPO)/$(IMAGE)"
 
 .PHONY: all build tag push
